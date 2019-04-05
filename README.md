@@ -15,18 +15,20 @@
 
 ## TODO
 
-	* Modelar Usuários, Filmes, e Avaliações no sistema
-	* Criar um script para cadastrar todos os filmes da base de dados no sistema
-	* Criar um script para cadastrar todos os usuários da base de dados no sistema
-	* Criar um script para cadastrar todas as avaliações de usuários da base de dados no sistema
-	* Implmentar o CRUD de cadastro de usuário no Backend
-	* Implementar o CRUD de cadastro de usuário no Frontend
-	* Implementar listagem de filmes no frontent
-	* Implementar filtragem de filmes por ano, data, genero e diretor no backend
-	* Implementar filtragem de filmes por ano, data, genero e diretor no frontend
-	* Implmentar busca por filmes no backend
-	* Implementar busca por filmes no frontend
+	* Modelar Usuários no banco - fácil
+	* Modelar Avaliações no banco  - fácil
+	* Criar um script para cadastrar todos os filmes da base de dados no sistema - dificil
+	* Criar um script para cadastrar todos os usuários da base de dados no sistema - dificil
+	* Criar um script para cadastrar todas as avaliações de usuários da base de dados no sistema - dificil
+	* Implmentar o CRUD de cadastro de usuário no Backend - médio
+	* Implementar o CRUD de cadastro de usuário no Frontend - médio
+	* Implementar listagem de filmes no frontent - fácil 
+	* Implementar filtragem de filmes por ano, data, genero e diretor no backend - médio
+	* Implementar filtragem de filmes por ano, data, genero e diretor no frontend - médio
+	* Implmentar busca por filmes no backend - médio
+	* Implementar busca por filmes no frontend - médio
 
  - Mais tarefas serão adicionadas após a conclusão dessas
 
 ## Done
+    * Modelar Filmes no banco  - fácil

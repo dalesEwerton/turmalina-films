@@ -40,12 +40,16 @@ exports.create = async(req, res) => {
 
 exports.update = async(req, res) => {
 
-    const { _id } = req.body;
+    const loggedUser = req.user;
+    const id = req.body._id;
 
     try {
-        let user = await User.findOneAndUpdate({_id: _id}, req.body);
 
-        if (user) res.status(200).send({message: 'Atualizado com sucesso.'});
+        if (loggedUser._id == id) await User.findOneAndUpdate({_id: id}, req.body);
+
+        else throw new Error('Você precisa estar logado para atualizar o usuário.')
+
+        res.status(200).send({message: 'Atualizado com sucesso.'});
 
     } catch (e) {
         return res.status(400).send({error: 'Falha na atualizacao. ' + e});
@@ -59,11 +63,9 @@ exports.delete = async(req, res) => {
     try {
         let result;
 
-        if (loggedUser._id == req.params.id) {
-            result = await User.deleteOne({_id: req.params.id});
-        } else {
-            throw new Error('Você precisa estar logado para deletar este usuário.')
-        }
+        if (loggedUser._id == req.params.id) result = await User.deleteOne({_id: req.params.id});
+        
+        else throw new Error('Você precisa estar logado para deletar o usuário.')
 
         if (result != undefined && result.n > 0) res.status(200).send({message: 'Deletado com sucesso.'});
 

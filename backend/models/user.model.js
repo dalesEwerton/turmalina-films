@@ -22,11 +22,7 @@ let UserSchema = new Schema({
     password: {
         type: String,
         required: true
-    },
-    ratings: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Rating'
-    }]
+    }
 });
 
 UserSchema.pre('save', async function (next) {

@@ -15,12 +15,9 @@
 
 ## TODO
 
-	* Modelar Usuários no banco - fácil
-	* Modelar Avaliações no banco  - fácil
 	* Criar um script para cadastrar todos os filmes da base de dados no sistema - dificil
 	* Criar um script para cadastrar todos os usuários da base de dados no sistema - dificil
 	* Criar um script para cadastrar todas as avaliações de usuários da base de dados no sistema - dificil
-	* Implmentar o CRUD de cadastro de usuário no Backend - médio
 	* Implementar o CRUD de cadastro de usuário no Frontend - médio
 	* Implementar listagem de filmes no frontent - fácil 
 	* Implementar filtragem de filmes por ano, data, genero e diretor no backend - médio
@@ -32,3 +29,6 @@
 
 ## Done
     * Modelar Filmes no banco  - fácil
+    * Modelar Usuários no banco - fácil
+	* Modelar Avaliações no banco  - fácil
+	* Implmentar o CRUD de cadastro de usuário no Backend - médio

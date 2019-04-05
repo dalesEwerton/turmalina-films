@@ -4,6 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose   = require('mongoose');
 const cors = require('cors');
+const user = require('./routes/user.routes');
 
 mongoose.set('useFindAndModify', false);
 
@@ -16,7 +17,11 @@ module.exports = mongoose.connect('mongodb://localhost:27017/TurmalinaFims', {us
 // initialize our express app
 const app = express();
 
+app.use(bodyParser.urlencoded({extended: false}))
+
 let port = 3000;
+
+app.use('/user', user);
 
 app.listen(port, () => {
     console.log('Server is up and running on port numner ' + port);

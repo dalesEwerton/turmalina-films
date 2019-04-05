@@ -1,0 +1,24 @@
+{
+  "name": "turmalina-films",
+  "version": "1.0.0",
+  "description": "Um sistema inteligente de recomendação de filmes ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dalesEwerton/turmalina-films.git"
+  },
+  "author": "Embedded TM",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dalesEwerton/turmalina-films/issues"
+  },
+  "homepage": "https://github.com/dalesEwerton/turmalina-films#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.22"
+  }
+}

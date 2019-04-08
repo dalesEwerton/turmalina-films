@@ -7,5 +7,6 @@ router.get('/:id', userController.verifyToken, userController.getOne);
 router.post('/', userController.create);
 router.put('/', userController.verifyToken, userController.update);
 router.delete('/:id', userController.verifyToken, userController.delete);
+router.post('/load', userController.loadFromCSV);
 
 module.exports = router;

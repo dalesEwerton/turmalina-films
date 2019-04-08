@@ -2,17 +2,19 @@ const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
 let FilmSchema = new Schema({
+    movieId: {
+        type: Number,
+        unique: true
+    },
     title: {
         type: String,
         required: true
     },
     year: {
-        type: Number,
-        required: true
+        type: Number
     },
     genres: [{
-        type: String,
-        required: true
+        type: String
     }]
 
 });

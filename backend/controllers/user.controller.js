@@ -102,17 +102,23 @@ exports.loadFromCSV = async (req, res) => {
     for (let rat of jsonArray) {
 
         try {
-            const us = new User({
-                name: 'Fake User Nº ' + rat.userId,
-                username: rat.userId,
-                email: 'fake.user.' + rat.userId + '@gmail.com',
-                password: 'FakeUser123'
-            });
+            let us = await User.find({userId: rat.userId});
 
-            await us.save();
-            console.log('Usuário fake nº ' + ratUserId + ' cadastrado com sucesso');
+            if (us.length == 0){
+                
+                us = new User({
+                    userId: rat.userId,
+                    name: `Fake User Nº ${rat.userId}`,
+                    username: rat.userId,
+                    email: `fake.user.${rat.userId}@gmail.com`,
+                    password: 'FakeUser123'
+                });
+
+                await us.save();
+                console.log(`Usuário fake nº ${rat.userId} cadastrado com sucesso`);
+            }
         } catch (e) {
-            console.log('Cadastrando ' + rat.userId + '. Aguarde ...');
+            console.log(e);
         }
     }
 };

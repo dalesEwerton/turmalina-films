@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const mongoose   = require('mongoose');
 const cors = require('cors');
 const user = require('./routes/user.routes');
+const film = require('./routes/film.routes');
+const rating = require('./routes/rating.routes');
 
 mongoose.set('useFindAndModify', false);
 
@@ -21,6 +23,8 @@ app.use(bodyParser.urlencoded({extended: false}))
 let port = 3000;
 
 app.use('/user', user);
+app.use('/film', film);
+app.use('/rating', rating);
 
 app.listen(port, () => {
     console.log('Server is up and running on port numner ' + port);

@@ -20,10 +20,10 @@ exports.loadFromCSV = async (req, res) => {
                 userId: user._id,
                 filmId: movie._id,
                 rate: rating
-            })
+            });
 
             await rat.save();
-            console.log(`Avaliacao fake nº ${rat._id} cadastrada com sucesso`);
+            console.log(`Avaliacao fake ${rat._id} cadastrada com sucesso`);
         } catch (e) {
             console.log(e);
         }

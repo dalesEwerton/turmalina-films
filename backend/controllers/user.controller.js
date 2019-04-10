@@ -110,7 +110,7 @@ exports.loadFromCSV = async (req, res) => {
                     userId: rat.userId,
                     name: `Fake User Nº ${rat.userId}`,
                     username: rat.userId,
-                    email: `fake.user.${rat.userId}@gmail.com`,
+                    email: `fake.user.${rat.userId  }@gmail.com`,
                     password: 'FakeUser123'
                 });
 
@@ -118,7 +118,7 @@ exports.loadFromCSV = async (req, res) => {
                 console.log(`Usuário fake nº ${rat.userId} cadastrado com sucesso`);
             }
         } catch (e) {
-            console.log(e);
+            //console.log(e);
         }
     }
 };

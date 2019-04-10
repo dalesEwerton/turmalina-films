@@ -15,7 +15,13 @@ let FilmSchema = new Schema({
     },
     genres: [{
         type: String
-    }]
+    }],
+    imdbId: {
+        type: Number
+    },
+    tmdbId: {
+        type: Number
+    }
 
 });
 

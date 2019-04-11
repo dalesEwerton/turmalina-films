@@ -1,0 +1,19 @@
+
+<div *ngIf="!isCreate">
+  <div class="container">
+    <div class="card card-container">
+      <h2 align="center">Login</h2>
+      <p id="profile-name" class="profile-name-card"></p>
+      <form (submit)="login($event)" class="form-signin">
+        <input type="text" class="form-control" placeholder="Username" required autofocus>
+        <input type="password" class="form-control" placeholder="Password" required>
+        <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Logar</button>
+      </form><!-- /form -->
+      <a (click)="createAccount()" class="create-account">
+        Create Account
+      </a>
+    </div><!-- /card-container -->
+  </div>
+</div>
+
+<app-create-account *ngIf="isCreate"></app-create-account>

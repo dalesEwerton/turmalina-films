@@ -27,4 +27,12 @@ export class SidenavComponent implements OnInit {
     return true;
   };
 
+  isLoginRoute() {
+    const urlRoute = window.location.href.split('/')[3];
+    if(LOGGED_ROUTES.includes(urlRoute)) return false;
+    else return true;
+  }
+
 }
+
+const LOGGED_ROUTES = ['home', 'questionnarie'];

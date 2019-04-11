@@ -9,6 +9,7 @@ import { SidenavComponent } from './nav/sidenav/sidenav.component';
 import { RecomendationComponent } from './films/recomendation/recomendation.component';
 import { QuestionnarieComponent } from './films/questionnarie/questionnarie.component';
 import { CreateAccountComponent } from './user/create-account/create-account.component';
+import { LoginComponent } from './user/login/login.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CreateAccountComponent } from './user/create-account/create-account.com
     SidenavComponent,
     RecomendationComponent,
     QuestionnarieComponent,
-    CreateAccountComponent
+    CreateAccountComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -14,6 +14,8 @@ export class CreateAccountComponent implements OnInit {
      })
   };
 
+  public isLogin = false;
+
   constructor(public http: HttpClient) { }
 
   ngOnInit() {
@@ -38,15 +40,15 @@ export class CreateAccountComponent implements OnInit {
     		username: username,
     		password: password
     	};
-    	console.log(body);    	
     	const request = this.http.post(apiRoute, body, this.httpOptions);
 
 
     	request.subscribe(
 			(response) => {
 				alert('Pronto, você agora pode realizar login');
+        window.location.reload();
 			}, (err) => {
-				alert('Erro ao realizar cadastro, verifique as informações e tente novamente.');
+				alert(err['error']['error']);
 			}
     	);
 
@@ -54,6 +56,10 @@ export class CreateAccountComponent implements OnInit {
     }else {
       alert('As senhas não conferem!');
     }
+  }
+
+  gotoLogin() {
+    this.isLogin = true
   }
 
 }

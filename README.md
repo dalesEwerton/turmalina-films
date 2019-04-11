@@ -20,6 +20,9 @@
 	* Implementar filtragem de filmes por ano, data, genero e diretor no frontend - médio
 	* Implmentar busca por filmes no backend - médio
 	* Implementar busca por filmes no frontend - médio
+	* Possibilitar ao usuário registrar avaliações no frontend - ḿédio
+	* Implementar função de recomendação de filmes no backend usando distancia euclidiana - difícil
+	* Implementar função de recomendação de filmes no backend usando jaccard - difícil
 
  - Mais tarefas serão adicionadas após a conclusão dessas
 
@@ -32,3 +35,5 @@
 	* Criar um script para cadastrar todos os filmes da base de dados no sistema - dificil
 	* Criar um script para cadastrar todas as avaliações de usuários da base de dados no sistema - dificil
 	* Implementar o CRUD de cadastro de usuário no Frontend - médio
+	* Implementar o Login de usuário no Backend - médio
+	* Implementar o Login de usuário no Frontend - médio

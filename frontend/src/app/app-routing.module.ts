@@ -3,11 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { RecomendationComponent } from './films/recomendation/recomendation.component';
 import { QuestionnarieComponent } from './films/questionnarie/questionnarie.component';
 import { CreateAccountComponent } from './user/create-account/create-account.component';
+import { LoginComponent } from './user/login/login.component';
 
 const routes: Routes = [
-    { path: 'create', component: CreateAccountComponent},
-	{ path: '', component: RecomendationComponent },
-	{ path: 'questionnarie', component: QuestionnarieComponent}
+	{ path: 'login', component: LoginComponent },
+	{ path: 'home', component: RecomendationComponent },
+	{ path: 'questionnarie', component: QuestionnarieComponent},
+	{ path: '**', component: LoginComponent},
 ];
 
 @NgModule({

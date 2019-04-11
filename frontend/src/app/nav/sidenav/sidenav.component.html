@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper" *ngIf="!isLoginRoute()">
 
   <!-- Sidebar -->
   <nav id="sidebar">
@@ -38,3 +38,4 @@
   </div>
 
 </div>
+<router-outlet *ngIf="isLoginRoute()"></router-outlet>

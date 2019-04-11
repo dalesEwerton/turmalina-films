@@ -5,7 +5,6 @@ const Schema   = mongoose.Schema;
 let UserSchema = new Schema({
     userId: {
         type: Number,
-        unique: true
     },
     name: {
         type: String,

@@ -17,8 +17,9 @@ module.exports = mongoose.connect('mongodb://localhost:27017/TurmalinaFims', {us
 
 // initialize our express app
 const app = express();
-
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 
 let port = 3000;
 

@@ -19,6 +19,7 @@ exports.verifyToken = async (req, res, next) => {
 };
 
 exports.create = async (req, res) => {
+    console.log(req.body);
     const {email} = req.body;
     try {
 

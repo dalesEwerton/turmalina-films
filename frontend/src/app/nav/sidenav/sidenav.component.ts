@@ -20,4 +20,11 @@ export class SidenavComponent implements OnInit {
     });
   }
 
+  isMobileMenu() {
+    if ($(window).width() > 991) {
+        return false;
+    }
+    return true;
+  };
+
 }

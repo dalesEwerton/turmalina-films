@@ -1,0 +1,19 @@
+.column {
+  float: left;
+  width: 32%;
+  padding-top: 3%;
+  padding-left: 3%;
+}
+
+@media screen and (max-width: 920px) {
+  .column {
+    width: 47%;
+  }
+
+}
+
+@media screen and (max-width: 450px) {
+  .column {
+    width: 105%;
+  }
+}

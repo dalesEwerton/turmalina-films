@@ -1,28 +1,3 @@
-/*
-    ADDITIONAL DEMO STYLE, NOT IMPORTANT TO MAKE THINGS WORK BUT TO MAKE IT A BIT NICER :)
-*/
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
-
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background: #fafafa;
-}
-
-p {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.1em;
-  font-weight: 300;
-  line-height: 1.7em;
-  color: #999;
-}
-
-a, a:hover, a:focus {
-  color: inherit;
-  text-decoration: none;
-  transition: all 0.3s;
-}
-
 #sidebar {
   /* don't forget to add all the previously mentioned styles here too */
   background: #7386D5;
@@ -62,12 +37,15 @@ a, a:hover, a:focus {
 ul ul a {
   font-size: 0.9em !important;
   padding-left: 30px !important;
-  background: #6d7fcc;
+  background: #6d7fccd="content";
 }
 
 .wrapper {
   display: flex;
-  align-items: stretch;
+}
+
+#content {
+  width: 100%;
 }
 
 #sidebar {

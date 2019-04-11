@@ -2,8 +2,8 @@
 
   <!-- Sidebar -->
   <nav id="sidebar">
-    <div class="sidebar-header">
-      <h3>Turmalina Films</h3>
+    <div class="sidebar-header" style="text-align: center;">
+      <img src="../../../assets/movies-icon.png" width="70%">
     </div>
 
     <ul class="list-unstyled components">
@@ -24,13 +24,17 @@
 
   <!-- Page Content -->
   <div id="content">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #7386D5; color: white">
       <div class="container-fluid">
-        <button type="button" id="sidebarCollapse" class="btn" style="background-color: transparent;">
-          <i class="fas fa-align-left"></i>
+        <button type="button" id="sidebarCollapse" class="btn" style="background-color: transparent; color: white">
+          <i class="fas fa-align-left"></i> TURMALINA FILMS
         </button>
+        <div class="float-right">
+        <i class="fas fa-power-off"></i>
+      </div>
       </div>
     </nav>
+    <router-outlet></router-outlet>
   </div>
 
 </div>

@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidenavComponent } from './nav/sidenav/sidenav.component';
+import { RecomendationComponent } from './films/recomendation/recomendation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SidenavComponent
+    SidenavComponent,
+    RecomendationComponent
   ],
   imports: [
     BrowserModule,

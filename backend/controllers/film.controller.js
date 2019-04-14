@@ -1,6 +1,24 @@
 const Film = require('../models/film.model');
 const CSV = require('csvtojson');
 
+
+
+
+exports.getAllFilms = async(req, res) => {
+    
+    try {
+        let allFilms = await Film.find({});
+
+        if(!allFilms)
+            return res.status(400).send({error: 'Não foi possivel recuperar os filmes.'})
+
+        return res.status(200).send({films: allFilms});
+    } catch (err) {
+        return res.status(500).send({error: 'Não foi possivel recuperar os filmes.'})
+    }
+}
+
+
 exports.loadFromCSV = async (req, res) => {
     const csvFilePath = './data/movies.csv';
     const jsonArray = await CSV().fromFile(csvFilePath);

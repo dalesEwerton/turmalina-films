@@ -1,9 +1,36 @@
+<div class="row" style="margin-bottom: none">
+	<div class="col"></div>
+	<div class="col"></div>
+
+	<div class="col-lg-4 col-sm-12">
+		<nav *ngIf="allFilms.length > 0" style="margin-top: 2%; margin-left: 10%" aria-label="Page navigation example">
+			<ul class="pagination">
+				<li  class="page-item"><a (click)="previousPages()" class="page-link">Previous</a></li>
+
+				<li [ngClass]="{'active': setPage == 1}" (click)="seletecPage(1)" 
+					class="page-item"><a class="page-link">{{ indexPagination + 1 }}</a></li>
+
+				<li [ngClass]="{'active': setPage == 2}" (click)="seletecPage(2)" 
+					class="page-item"><a class="page-link">{{ indexPagination + 2 }}</a></li>
+
+				<li [ngClass]="{'active': setPage == 3}" (click)="seletecPage(3)" 
+					class="page-item"><a class="page-link">{{ indexPagination + 3 }}</a></li>
+
+				<li class="page-item"><a (click)="nextPages()" class="page-link">Next</a></li>
+			</ul>
+		</nav>
+	</div>
+</div>
+
+
+
 <div class="row">
-    <div class="column" *ngFor="let n of [1,2,3,4,5,6,7,8]">
+    <div class="column" *ngFor="let film of viewFilms">
         <div class="card" style="width: 99%;">
-		  <img class="card-img-top" src="https://picsum.photos/g/200/300" alt="Card image cap">
+		  <img class="card-img-top" style="height: 50%" src="https://picsum.photos/g/200/300" alt="Card image cap">
 		  <div class="card-body">
-		    <h5 class="card-title">Titulo do Filme</h5>
+				<h5 class="card-title">{{ film['title'] }}</h5>
+				<h6 style="font-size:0.8rem" class="card-subtitle mb-2 text-muted">{{ film['genres'] }} </h6>
 		    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 		    <a href="#" class="btn btn-primary">Go somewhere</a>
 		  </div>

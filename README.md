@@ -16,9 +16,7 @@
 ## TODO
 
 	* Implementar listagem de filmes no frontent - fácil 
-	* Implementar filtragem de filmes por ano, data, genero e diretor no backend - médio
-	* Implementar filtragem de filmes por ano, data, genero e diretor no frontend - médio
-	* Implmentar busca por filmes no backend - médio
+	* Implementar filtragem de filmes por ano, data, genero e diretor no frontend - médio	
 	* Implementar busca por filmes no frontend - médio
 	* Possibilitar ao usuário registrar avaliações no frontend - ḿédio
 	* Implementar função de recomendação de filmes no backend usando distancia euclidiana - difícil
@@ -27,6 +25,9 @@
  - Mais tarefas serão adicionadas após a conclusão dessas
 
 ## Done
+	* Implementar filtragem de filmes por ano, data, genero e diretor no backend - médio
+	* Possibilitar ao usuário registrar avaliações no backend - ḿédio
+	* Implmentar busca por filmes no backend - médio
     * Modelar Filmes no banco  - fácil
     * Modelar Usuários no banco - fácil
 	* Modelar Avaliações no banco  - fácil

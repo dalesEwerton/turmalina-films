@@ -2,8 +2,6 @@ const Film = require('../models/film.model');
 const CSV = require('csvtojson');
 
 
-
-
 exports.getAllFilms = async(req, res) => {
     
     try {
@@ -18,6 +16,45 @@ exports.getAllFilms = async(req, res) => {
     }
 }
 
+exports.getByGenre = async (req, res) => {
+
+    try {
+        let films = await Film.find({genres: {$in: [req.params.genre]}});
+
+        if (!films)
+            return res.status(400).send({error: 'Não foi possível recuperar os filmes.'})
+    
+        return res.status(200).send({films: films});
+    } catch (err) {
+        return res.status(500).send({error: 'Não foi possível recuperar os filmes.'})
+    }
+}
+
+exports.getByYear = async (req, res) => {
+    try {
+        let films = await Film.find({year: req.params.year});
+
+        if (!films)
+            return res.status(400).send({error: 'Não foi possível recuperar os filmes.'})
+    
+        return res.status(200).send({films: films});
+    } catch (err) {
+        return res.status(500).send({error: 'Não foi possível recuperar os filmes.'})
+    }
+}
+
+exports.getByTitle = async (req, res) => {
+    try {
+        let films = await Film.find({title: {$regex: req.params.title, $options: "$i"}});
+
+        if (!films)
+            return res.status(400).send({error: 'Não foi possível recuperar os filmes.'})
+    
+        return res.status(200).send({films: films});
+    } catch (err) {
+        return res.status(500).send({error: 'Não foi possível recuperar os filmes.'})
+    }
+}
 
 exports.loadFromCSV = async (req, res) => {
     const csvFilePath = './data/movies.csv';

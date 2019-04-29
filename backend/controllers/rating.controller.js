@@ -34,15 +34,24 @@ exports.rateFilm = async (req, res) => {
    
     try {
         const { userId, filmId, rate, comment } = req.body;
-        const rating = new Rating({userId, filmId, rate, comment});
-
-        await rating.save();
+        
+        await Rating.findOneAndUpdate({userId: userId, filmId: filmId}, {rate: rate, comment: comment}, {upsert: true});
 
         res.status(200).send({message: 'Avaliacao salva com sucesso.'})
     } catch (error) {
         res.status(500).send({error: error})
     } 
 
+}
+
+exports.getRatings = async (req, res) => {
+    try {
+        const { userId } = req.params.userId;
+        let ratings = await Rating.find({userId: userId});
+        res.status(200).send(ratings);
+    } catch (error) {
+        res.status(500).send({error: error})
+    }
 }
 
 module.exports = exports;

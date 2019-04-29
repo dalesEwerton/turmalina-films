@@ -37,6 +37,8 @@ export class LoginComponent implements OnInit {
     const request = this.http.post(apiRoute, {username: username, password: password}, this.httpOptions);
     request.subscribe(
     	(response) => {
+        console.log( response['user']['_id']);
+        localStorage.setItem('userId', response['user']['_id']);
     		localStorage.setItem('token', response['token']);
     		alert('Login realizado.');
     		this.router.navigate(['home']);

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { RecommendationService } from './recommendation.service';
 
 @Component({
-  selector: 'app-recomendation',
-  templateUrl: './recomendation.component.html',
-  styleUrls: ['./recomendation.component.css']
+  selector: 'app-recommendation',
+  templateUrl: './recommendation.component.html',
+  styleUrls: ['./recommendation.component.css']
 })
-export class RecomendationComponent implements OnInit {
+export class RecommendationComponent implements OnInit {
 
 
   allFilms: any;
@@ -14,13 +14,7 @@ export class RecomendationComponent implements OnInit {
   indexPagination: number;
   setPage: number;
 
-  constructor(public http: HttpClient) { }
-  
-  public httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type':  'application/json'
-     })
-  };
+  constructor(private recommendationService: RecommendationService) { }
 
   ngOnInit() {
     this.allFilms = {};
@@ -30,9 +24,7 @@ export class RecomendationComponent implements OnInit {
   }
 
   getFilms() {
-    const apiRoute = 'http://localhost:3000/film';
-    const request = this.http.get(apiRoute, this.httpOptions);
-    request.subscribe((response) => {
+    this.recommendationService.getFilms().subscribe((response) => {
       this.allFilms = response['films'];
       this.viewFilms = response['films'].slice(0,9);
     }, (err) => {
@@ -41,10 +33,8 @@ export class RecomendationComponent implements OnInit {
   }
 
 
-  loadFilms() {
-    const apiRoute = 'http://localhost:3000/film/load';
-    const request = this.http.post(apiRoute, this.httpOptions);
-    request.subscribe((response) => {
+  loadFilms() {    
+    this.recommendationService.loadFilms().subscribe((response) => {
       alert('Login Filmes carregados com sucesso.');
     }, (err) => {
       console.log(err);
@@ -80,5 +70,20 @@ export class RecomendationComponent implements OnInit {
 
   private nextElement() {
     return ((this.setPage - 1) + this.indexPagination) * 9;
+  }
+
+  removeMovie(film) {
+    this.viewFilms = this.viewFilms.filter((elem) => {
+      return elem !== film;
+    })
+    this.allFilms = this.allFilms.filter((elem) => {
+      return elem !== film;
+    })
+  }
+
+  rateMovie(rating) {
+    this.recommendationService.rateFilm(rating).subscribe((response) => {
+      console.log(response);
+    })
   }
 }

@@ -24,16 +24,8 @@
 
 
 
-<div class="row">
-    <div class="column" *ngFor="let film of viewFilms">
-        <div class="card" style="width: 99%;">
-		  <img class="card-img-top" style="height: 50%" src="https://picsum.photos/g/200/300" alt="Card image cap">
-		  <div class="card-body">
-				<h5 class="card-title">{{ film['title'] }}</h5>
-				<h6 style="font-size:0.8rem" class="card-subtitle mb-2 text-muted">{{ film['genres'] }} </h6>
-		    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-		    <a href="#" class="btn btn-primary">Go somewhere</a>
-		  </div>
-		</div>
+<div class="row" style="margin-left: 16px" >
+    <div *ngFor="let film of viewFilms"  style="margin: 8px">
+      <app-film-card [film]='film' (hideMovie)='removeMovie($event)' (rateMovie)='rateMovie($event)'></app-film-card>
     </div>
 </div>

@@ -7,22 +7,24 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSliderModule} from '@angular/material/slider';
 import { BarRatingModule } from "ngx-bar-rating";
+import {MatGridListModule} from '@angular/material/grid-list'
 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidenavComponent } from './nav/sidenav/sidenav.component';
-import { RecomendationComponent } from './films/recomendation/recomendation.component';
+import { RecommendationComponent } from './films/recomendation/recommendation.component';
 import { QuestionnarieComponent } from './films/questionnarie/questionnarie.component';
 import { CreateAccountComponent } from './user/create-account/create-account.component';
 import { LoginComponent } from './user/login/login.component';
 import { FilmCardComponent } from './films/recomendation/film-card/film-card.component';
+import { RecommendationService } from './films/recomendation/recommendation.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidenavComponent,
-    RecomendationComponent,
+    RecommendationComponent,
     QuestionnarieComponent,
     CreateAccountComponent,
     LoginComponent,
@@ -38,9 +40,10 @@ import { FilmCardComponent } from './films/recomendation/film-card/film-card.com
     MatButtonModule,
     MatSliderModule,
     BarRatingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatGridListModule
   ],
-  providers: [],
+  providers: [RecommendationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

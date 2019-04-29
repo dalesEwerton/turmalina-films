@@ -3,6 +3,14 @@
 }
   
 .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-image: url('https://s2.glbimg.com/gcAZ2B68mX2UXsyhajjk4qAN5kE=/e.glbimg.com/og/ed/f/original/2014/11/07/toystory.jpg');
     background-size: cover;
+}
+
+.rating {
+    opacity: 1;
+}
+
+.rating:hover {
+    opacity: 1;
 }

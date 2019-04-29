@@ -1,5 +1,14 @@
 const Film = require('../models/film.model');
 const CSV = require('csvtojson');
+const Recommendation = require('./recommendation.controller');
+
+exports.getRecommendation = async (req, res) => {
+    const { userId } = req.params;
+
+    let recommendation = await Recommendation.getRecommendation(userId);
+
+    res.status(200).send(recommendation);
+}
 
 
 exports.getAllFilms = async(req, res) => {

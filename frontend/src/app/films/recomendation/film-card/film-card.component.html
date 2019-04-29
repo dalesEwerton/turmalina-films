@@ -1,19 +1,23 @@
 <mat-card class="example-card">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Toy Story</mat-card-title>
-    <mat-card-subtitle>1995</mat-card-subtitle>
+    <mat-card-title>{{film.title}}</mat-card-title>
+    <mat-card-subtitle>{{film.genres}}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <p>
       Woody é um boneco cowboy de bom coração que pertence a um jovem chamado Andy. 
       Porém vê sua posição como o brinquedo favorito de Andy comprometida quando seus pais lhe compram um outro brinquedo, o Buzz Lightyear, 
-      uma figura de ação. Ainda pior, Buzz é arrogante e acha que ele é um astronauta de verdade em uma missão para retornar ao seu planeta natal.
+      uma figura de ação. 
     </p>
   </mat-card-content>
-  <mat-card-actions align="end">
-    <bar-rating [(rate)]="rate" [max]="5" [theme]="'default'"></bar-rating>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
+  <mat-card-actions align="end" class='rating'>
+    <bar-rating [(rate)]="rate" [max]="5" style="margin-bottom: 15px"></bar-rating>
+    <button mat-button (click)="submitRating()">Submit</button>
+    <div style="flex: 1 1 auto"></div>
+    <button mat-button (click)="remove()">
+        <i class="material-icons">not_interested</i>
+    </button>
   </mat-card-actions>
-</mat-card>
+  </mat-card>
+      
